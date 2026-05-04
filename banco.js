@@ -55,3 +55,19 @@ criarConta("Bruno Costa", 500);
 depositar(1, 200);
 sacar(2, 100);
 listarContas();
+// Membro 4 — atualiza nomeBanco e adiciona extrato()
+// ALTERE a linha do nomeBanco para:
+let nomeBanco = "BANCO VIRTUAL S.A.";
+function extrato(indice) {
+  if (indice < 1 || indice > contas.length) {
+    console.log("Conta não encontrada.");
+    return;
+  }
+  let c = contas[indice - 1];
+  console.log("\n=== EXTRATO — " + nomeBanco + " ===");
+  console.log("Titular : " + c.titular);
+  console.log("Saldo : R$ " + c.saldo.toFixed(2));
+  console.log("Status : " + (c.ativa ? "Ativa" : "Encerrada"));
+}
+// Teste final
+extrato(1);
